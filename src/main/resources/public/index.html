@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Fraud Alert Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1><i class="fas fa-shield-alt"></i> Transaction Fraud Alert Dashboard</h1>
+        <div class="connection-status">
+            <span id="status-icon" class="status-disconnected"><i class="fas fa-plug"></i></span>
+            <span id="status-text">Disconnected</span>
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>Total Alerts</h3>
+                <div class="stat-value" id="total-alerts">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Account Alerts</h3>
+                <div class="stat-value" id="account-alerts">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Counterparty Alerts</h3>
+                <div class="stat-value" id="counterparty-alerts">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>High Value Alerts</h3>
+                <div class="stat-value" id="high-value-alerts">0</div>
+            </div>
+        </div>
+
+        <div class="alert-table-container">
+            <h2>Recent Fraud Alerts</h2>
+            <div class="table-actions">
+                <button id="clear-alerts" class="btn"><i class="fas fa-trash"></i> Clear All</button>
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search transactions...">
+                    <button id="search-btn" class="btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <table id="alerts-table">
+                    <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Transaction ID</th>
+                        <th>Account ID</th>
+                        <th>Counterparty ID</th>
+                        <th>Amount</th>
+                        <th>Reason</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="alerts-body">
+                    <!-- Alert rows will be added here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="no-alerts-message">No fraud alerts detected</div>
+        </div>
+    </div>
+</div>
+
+<!-- Alert Details Modal -->
+<div id="alert-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Transaction Details</h2>
+        <div class="modal-body" id="modal-body">
+            <!-- Transaction details will be inserted here -->
+        </div>
+        <div class="modal-actions">
+            <button id="investigate-btn" class="btn primary-btn">Mark for Investigation</button>
+            <button id="dismiss-btn" class="btn">Dismiss Alert</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
+

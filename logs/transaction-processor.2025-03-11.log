@@ -1,0 +1,758 @@
+2025-03-11 23:10:11.282 [main] INFO  o.a.k.c.producer.ProducerConfig - Idempotence will be disabled because acks is set to 1, not set to 'all'.
+2025-03-11 23:10:11.286 [main] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-03-11 23:10:11.378 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.4.0
+2025-03-11 23:10:11.378 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 2e1947d240607d53
+2025-03-11 23:10:11.378 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1741709411376
+2025-03-11 23:10:11.379 [main] INFO  c.e.generator.TransactionGenerator - Transaction generator initialized with bootstrap servers: localhost:9092
+2025-03-11 23:10:11.379 [main] INFO  c.e.generator.TransactionGenerator - Sending batch of 10 transactions
+2025-03-11 23:10:11.527 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Resetting the last seen epoch of partition transactions-0 to 0 since the associated topicId changed from null to UhDWg42aR0yhjNRe-NKIRg
+2025-03-11 23:10:11.528 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Resetting the last seen epoch of partition transactions-2 to 0 since the associated topicId changed from null to UhDWg42aR0yhjNRe-NKIRg
+2025-03-11 23:10:11.528 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Resetting the last seen epoch of partition transactions-1 to 0 since the associated topicId changed from null to UhDWg42aR0yhjNRe-NKIRg
+2025-03-11 23:10:11.529 [kafka-producer-network-thread | producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: d7dUjKE8TLSw4bAxJcKHew
+2025-03-11 23:10:11.583 [kafka-producer-network-thread | producer-1] INFO  c.e.generator.TransactionGenerator - Transaction sent: {"accountId":"ACC456789","counterpartyId":"CP567890","amount":7803.9,"currency":"GBP","transactionId":"TX4edd0687","timestamp":"2025-03-11T16:10:11.385783Z"} - offset: 0
+2025-03-11 23:10:11.651 [kafka-producer-network-thread | producer-1] INFO  c.e.generator.TransactionGenerator - Transaction sent: {"accountId":"ACC890123","counterpartyId":"CP123456","amount":9285.77,"currency":"USD","transactionId":"TXb3cd1d55","timestamp":"2025-03-11T16:10:11.547050Z"} - offset: 1
+2025-03-11 23:10:11.652 [kafka-producer-network-thread | producer-1] INFO  c.e.generator.TransactionGenerator - Transaction sent: {"accountId":"ACC901234","counterpartyId":"CP567890","amount":7779.7,"currency":"GBP","transactionId":"TX3a0966d3","timestamp":"2025-03-11T16:10:11.559814Z"} - offset: 0
+2025-03-11 23:10:11.652 [kafka-producer-network-thread | producer-1] INFO  c.e.generator.TransactionGenerator - Transaction sent: {"accountId":"ACC456789","counterpartyId":"CP123456","amount":739.53,"currency":"GBP","transactionId":"TX024342f1","timestamp":"2025-03-11T16:10:11.570957Z"} - offset: 1
+2025-03-11 23:10:11.654 [kafka-producer-network-thread | producer-1] INFO  c.e.generator.TransactionGenerator - Transaction sent: {"accountId":"ACC234567","counterpartyId":"CP901234","amount":8875.18,"currency":"AUD","transactionId":"TX7182edeb","timestamp":"2025-03-11T16:10:11.590769Z"} - offset: 0
+2025-03-11 23:10:11.655 [kafka-producer-network-thread | producer-1] INFO  c.e.generator.TransactionGenerator - Transaction sent: {"accountId":"ACC789012","counterpartyId":"CP789012","amount":5599.22,"currency":"CHF","transactionId":"TX3419da33","timestamp":"2025-03-11T16:10:11.606262Z"} - offset: 2
+2025-03-11 23:10:11.655 [kafka-producer-network-thread | producer-1] INFO  c.e.generator.TransactionGenerator - Transaction sent: {"accountId":"ACC567890","counterpartyId":"CP456789","amount":8627.72,"currency":"AUD","transactionId":"TXd5785f10","timestamp":"2025-03-11T16:10:11.638160Z"} - offset: 2
+2025-03-11 23:10:11.655 [kafka-producer-network-thread | producer-1] INFO  c.e.generator.TransactionGenerator - Transaction sent: {"accountId":"ACC789012","counterpartyId":"CP123456","amount":3365.52,"currency":"CHF","transactionId":"TX324fd6bd","timestamp":"2025-03-11T16:10:11.625070Z"} - offset: 1
+2025-03-11 23:10:11.655 [kafka-producer-network-thread | producer-1] INFO  c.e.generator.TransactionGenerator - Transaction sent: {"accountId":"ACC456789","counterpartyId":"CP789012","amount":9900.47,"currency":"CAD","transactionId":"TX17d61153","timestamp":"2025-03-11T16:10:11.650834Z"} - offset: 2
+2025-03-11 23:10:11.670 [kafka-producer-network-thread | producer-1] INFO  c.e.generator.TransactionGenerator - Transaction sent: {"accountId":"ACC123456","counterpartyId":"CP123456","amount":6221.15,"currency":"JPY","transactionId":"TXa531d639","timestamp":"2025-03-11T16:10:11.663727Z"} - offset: 3
+2025-03-11 23:10:11.676 [main] INFO  c.e.generator.TransactionGenerator - Batch completed - 10 transactions sent
+2025-03-11 23:10:11.676 [main] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms.
+2025-03-11 23:10:11.682 [main] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-03-11 23:10:11.682 [main] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-03-11 23:10:11.683 [main] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-03-11 23:10:11.683 [main] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.producer for producer-1 unregistered
+2025-03-11 23:15:11.477 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-11 23:15:12.664 [main] ERROR com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Exception during pool initialization.
+java.sql.SQLRecoverableException: IO Error: The Network Adapter could not establish the connection (CONNECTION_ID=dtyDlBG/SAqoF/IgGTfxlw==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:892)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:697)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1041)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:89)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:732)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:648)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.example.db.OracleBlacklistRepository.<init>(OracleBlacklistRepository.java:30)
+	at com.example.TransactionBlacklistProcessor.main(TransactionBlacklistProcessor.java:53)
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=dtyDlBG/SAqoF/IgGTfxlw==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:694)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:584)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:938)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:349)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:656)
+	... 13 common frames omitted
+Caused by: java.io.IOException: Connection refused, socket connect lapse 1 ms. localhost 1521  30000 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:425)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:307)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:269)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:243)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:980)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:655)
+	... 18 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:483)
+	at java.base/sun.nio.ch.Net.connect(Net.java:472)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:692)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:194)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:183)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:157)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:384)
+	... 23 common frames omitted
+2025-03-11 23:15:12.668 [main] ERROR c.e.TransactionBlacklistProcessor - Error in transaction processing: Failed to initialize pool: IO Error: The Network Adapter could not establish the connection (CONNECTION_ID=dtyDlBG/SAqoF/IgGTfxlw==)
+com.zaxxer.hikari.pool.HikariPool$PoolInitializationException: Failed to initialize pool: IO Error: The Network Adapter could not establish the connection (CONNECTION_ID=dtyDlBG/SAqoF/IgGTfxlw==)
+	at com.zaxxer.hikari.pool.HikariPool.throwPoolInitializationException(HikariPool.java:596)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:582)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:100)
+	at com.zaxxer.hikari.HikariDataSource.<init>(HikariDataSource.java:81)
+	at com.example.db.OracleBlacklistRepository.<init>(OracleBlacklistRepository.java:30)
+	at com.example.TransactionBlacklistProcessor.main(TransactionBlacklistProcessor.java:53)
+Caused by: java.sql.SQLRecoverableException: IO Error: The Network Adapter could not establish the connection (CONNECTION_ID=dtyDlBG/SAqoF/IgGTfxlw==)
+	at oracle.jdbc.driver.T4CConnection.handleLogonNetException(T4CConnection.java:892)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:697)
+	at oracle.jdbc.driver.PhysicalConnection.connect(PhysicalConnection.java:1041)
+	at oracle.jdbc.driver.T4CDriverExtension.getConnection(T4CDriverExtension.java:89)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:732)
+	at oracle.jdbc.driver.OracleDriver.connect(OracleDriver.java:648)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:359)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:470)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:561)
+	... 4 common frames omitted
+Caused by: oracle.net.ns.NetException: The Network Adapter could not establish the connection (CONNECTION_ID=dtyDlBG/SAqoF/IgGTfxlw==)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:694)
+	at oracle.net.resolver.AddrResolution.resolveAndExecute(AddrResolution.java:584)
+	at oracle.net.ns.NSProtocol.establishConnection(NSProtocol.java:938)
+	at oracle.net.ns.NSProtocol.connect(NSProtocol.java:349)
+	at oracle.jdbc.driver.T4CConnection.connect(T4CConnection.java:2442)
+	at oracle.jdbc.driver.T4CConnection.logon(T4CConnection.java:656)
+	... 13 common frames omitted
+Caused by: java.io.IOException: Connection refused, socket connect lapse 1 ms. localhost 1521  30000 (2/2) true
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:425)
+	at oracle.net.nt.TcpNTAdapter.doLocalDNSLookupConnect(TcpNTAdapter.java:307)
+	at oracle.net.nt.TcpNTAdapter.connect(TcpNTAdapter.java:269)
+	at oracle.net.nt.ConnOption.connect(ConnOption.java:243)
+	at oracle.net.nt.ConnStrategy.executeConnOption(ConnStrategy.java:980)
+	at oracle.net.nt.ConnStrategy.execute(ConnStrategy.java:655)
+	... 18 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:483)
+	at java.base/sun.nio.ch.Net.connect(Net.java:472)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:692)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:194)
+	at oracle.net.nt.TimeoutSocketChannel.connect(TimeoutSocketChannel.java:183)
+	at oracle.net.nt.TimeoutSocketChannel.<init>(TimeoutSocketChannel.java:157)
+	at oracle.net.nt.TcpNTAdapter.establishSocket(TcpNTAdapter.java:384)
+	... 23 common frames omitted
+2025-03-11 23:21:11.862 [main] INFO  c.e.TransactionBlacklistProcessor - Loaded properties from classpath
+2025-03-11 23:21:11.872 [main] INFO  c.e.TransactionBlacklistProcessor - Using Oracle connection: jdbc:oracle:thin:@//10.14.223.202:1521/R18
+2025-03-11 23:21:11.876 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-11 23:21:17.284 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection oracle.jdbc.driver.T4CConnection@1608bcbd
+2025-03-11 23:21:17.285 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-11 23:21:17.285 [main] INFO  c.e.db.OracleBlacklistRepository - Oracle blacklist repository initialized
+2025-03-11 23:21:17.307 [main] INFO  o.apache.kafka.streams.StreamsConfig - StreamsConfig values: 
+	acceptable.recovery.lag = 10000
+	application.id = transaction-blacklist-processor
+	application.server = 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [localhost:9092]
+	buffered.records.per.partition = 1000
+	built.in.metrics.version = latest
+	cache.max.bytes.buffering = 10485760
+	client.id = 
+	commit.interval.ms = 10000
+	connections.max.idle.ms = 540000
+	default.deserialization.exception.handler = class org.apache.kafka.streams.errors.LogAndFailExceptionHandler
+	default.dsl.store = rocksDB
+	default.key.serde = class org.apache.kafka.common.serialization.Serdes$StringSerde
+	default.list.key.serde.inner = null
+	default.list.key.serde.type = null
+	default.list.value.serde.inner = null
+	default.list.value.serde.type = null
+	default.production.exception.handler = class org.apache.kafka.streams.errors.DefaultProductionExceptionHandler
+	default.timestamp.extractor = class org.apache.kafka.streams.processor.FailOnInvalidTimestamp
+	default.value.serde = class org.apache.kafka.common.serialization.Serdes$StringSerde
+	max.task.idle.ms = 0
+	max.warmup.replicas = 2
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	num.standby.replicas = 0
+	num.stream.threads = 1
+	poll.ms = 100
+	probing.rebalance.interval.ms = 600000
+	processing.guarantee = at_least_once
+	rack.aware.assignment.tags = []
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	repartition.purge.interval.ms = 30000
+	replication.factor = -1
+	request.timeout.ms = 40000
+	retries = 0
+	retry.backoff.ms = 100
+	rocksdb.config.setter = null
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	state.cleanup.delay.ms = 600000
+	state.dir = /var/folders/qx/xyggzq0j0z9b2j2l37wkvp_m0000gn/T//kafka-streams
+	statestore.cache.max.bytes = 10485760
+	task.timeout.ms = 300000
+	topology.optimization = none
+	upgrade.from = null
+	window.size.ms = null
+	windowed.inner.class.serde = null
+	windowstore.changelog.additional.retention.ms = 86400000
+
+2025-03-11 23:21:17.323 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-admin
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-03-11 23:21:17.355 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.4.0
+2025-03-11 23:21:17.355 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 2e1947d240607d53
+2025-03-11 23:21:17.355 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1741710077354
+2025-03-11 23:21:17.357 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9] Kafka Streams version: 3.4.0
+2025-03-11 23:21:17.357 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9] Kafka Streams commit ID: 2e1947d240607d53
+2025-03-11 23:21:17.373 [main] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] Creating restore consumer client
+2025-03-11 23:21:17.379 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = none
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-restore-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = null
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2025-03-11 23:21:17.396 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.4.0
+2025-03-11 23:21:17.396 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 2e1947d240607d53
+2025-03-11 23:21:17.396 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1741710077396
+2025-03-11 23:21:17.400 [main] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] Creating thread producer client
+2025-03-11 23:21:17.403 [main] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 100
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2025-03-11 23:21:17.407 [main] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] Instantiated an idempotent producer.
+2025-03-11 23:21:17.416 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.4.0
+2025-03-11 23:21:17.416 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 2e1947d240607d53
+2025-03-11 23:21:17.416 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1741710077416
+2025-03-11 23:21:17.420 [main] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] Creating consumer client
+2025-03-11 23:21:17.421 [main] INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = false
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = transaction-blacklist-processor
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = false
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 1000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [org.apache.kafka.streams.processor.internals.StreamsPartitionAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+2025-03-11 23:21:17.428 [main] INFO  o.a.k.s.p.i.a.AssignorConfiguration - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer] Cooperative rebalancing protocol is enabled now
+2025-03-11 23:21:17.436 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.4.0
+2025-03-11 23:21:17.436 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 2e1947d240607d53
+2025-03-11 23:21:17.436 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1741710077436
+2025-03-11 23:21:17.445 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9] State transition from CREATED to REBALANCING
+2025-03-11 23:21:17.445 [main] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9] Started 1 stream threads
+2025-03-11 23:21:17.446 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] Starting
+2025-03-11 23:21:17.446 [main] INFO  c.e.TransactionBlacklistProcessor - Kafka Streams started successfully
+2025-03-11 23:21:17.446 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] State transition from CREATED to STARTING
+2025-03-11 23:21:17.447 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.clients.consumer.KafkaConsumer - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Subscribed to topic(s): transactions
+2025-03-11 23:21:17.535 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Resetting the last seen epoch of partition transactions-0 to 0 since the associated topicId changed from null to UhDWg42aR0yhjNRe-NKIRg
+2025-03-11 23:21:17.535 [kafka-producer-network-thread | transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] Cluster ID: d7dUjKE8TLSw4bAxJcKHew
+2025-03-11 23:21:17.535 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Resetting the last seen epoch of partition transactions-2 to 0 since the associated topicId changed from null to UhDWg42aR0yhjNRe-NKIRg
+2025-03-11 23:21:17.535 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Resetting the last seen epoch of partition transactions-1 to 0 since the associated topicId changed from null to UhDWg42aR0yhjNRe-NKIRg
+2025-03-11 23:21:17.536 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Cluster ID: d7dUjKE8TLSw4bAxJcKHew
+2025-03-11 23:21:17.537 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2025-03-11 23:21:17.538 [kafka-producer-network-thread | transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] ProducerId set to 13 with epoch 0
+2025-03-11 23:21:17.538 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] (Re-)joining group
+2025-03-11 23:21:17.549 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] Processed 0 total records, ran 0 punctuators, and committed 0 total tasks since the last update
+2025-03-11 23:21:17.558 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Request joining group due to: need to re-join with the given member-id: transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer-d9d8e48f-5c45-4694-8d06-750bbdc78b3b
+2025-03-11 23:21:17.558 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2025-03-11 23:21:17.558 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] (Re-)joining group
+2025-03-11 23:21:20.571 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Successfully joined group with generation Generation{generationId=1, memberId='transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer-d9d8e48f-5c45-4694-8d06-750bbdc78b3b', protocol='stream'}
+2025-03-11 23:21:20.579 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.i.RepartitionTopics - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer] Skipping the repartition topic validation since there are no repartition topics.
+2025-03-11 23:21:20.584 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer] All members participating in this rebalance: 
+e6637b43-eae8-42c5-b484-f1938275e2f9: [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer-d9d8e48f-5c45-4694-8d06-750bbdc78b3b].
+2025-03-11 23:21:20.587 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.i.a.HighAvailabilityTaskAssignor - Decided on assignment: {e6637b43-eae8-42c5-b484-f1938275e2f9=[activeTasks: ([0_0, 0_1, 0_2]) standbyTasks: ([]) prevActiveTasks: ([]) prevStandbyTasks: ([]) changelogOffsetTotalsByTask: ([]) taskLagTotals: ([]) clientTags: ([]) capacity: 1 assigned: 3]} with no followup probing rebalance.
+2025-03-11 23:21:20.587 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer] Assigned tasks [0_2, 0_1, 0_0] including stateful [] to clients as: 
+e6637b43-eae8-42c5-b484-f1938275e2f9=[activeTasks: ([0_0, 0_1, 0_2]) standbyTasks: ([])].
+2025-03-11 23:21:20.590 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer] Client e6637b43-eae8-42c5-b484-f1938275e2f9 per-consumer assignment:
+	prev owned active {}
+	prev owned standby {transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer-d9d8e48f-5c45-4694-8d06-750bbdc78b3b=[]}
+	assigned active {transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer-d9d8e48f-5c45-4694-8d06-750bbdc78b3b=[0_2, 0_1, 0_0]}
+	revoking active {}
+	assigned standby {}
+
+2025-03-11 23:21:20.590 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer] Finished stable assignment of tasks, no followup rebalances required.
+2025-03-11 23:21:20.590 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Finished assignment for group at generation 1: {transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer-d9d8e48f-5c45-4694-8d06-750bbdc78b3b=Assignment(partitions=[transactions-0, transactions-1, transactions-2], userDataSize=76)}
+2025-03-11 23:21:20.600 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Successfully synced group in generation Generation{generationId=1, memberId='transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer-d9d8e48f-5c45-4694-8d06-750bbdc78b3b', protocol='stream'}
+2025-03-11 23:21:20.600 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Updating assignment with
+	Assigned partitions:                       [transactions-0, transactions-1, transactions-2]
+	Current owned partitions:                  []
+	Added partitions (assigned - owned):       [transactions-0, transactions-1, transactions-2]
+	Revoked partitions (owned - assigned):     []
+
+2025-03-11 23:21:20.601 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Notifying assignor about the new Assignment(partitions=[transactions-0, transactions-1, transactions-2], userDataSize=76)
+2025-03-11 23:21:20.601 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.i.StreamsPartitionAssignor - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer] No followup rebalance was requested, resetting the rebalance schedule.
+2025-03-11 23:21:20.601 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.TaskManager - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] Handle new assignment with:
+	New active tasks: [0_2, 0_1, 0_0]
+	New standby tasks: []
+	Existing active tasks: []
+	Existing standby tasks: []
+2025-03-11 23:21:20.614 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Adding newly assigned partitions: transactions-0, transactions-1, transactions-2
+2025-03-11 23:21:20.614 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] State transition from STARTING to PARTITIONS_ASSIGNED
+2025-03-11 23:21:20.622 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Found no committed offset for partition transactions-1
+2025-03-11 23:21:20.622 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Found no committed offset for partition transactions-2
+2025-03-11 23:21:20.622 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Found no committed offset for partition transactions-0
+2025-03-11 23:21:20.634 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Resetting offset for partition transactions-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2025-03-11 23:21:20.634 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Resetting offset for partition transactions-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2025-03-11 23:21:20.634 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.SubscriptionState - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Resetting offset for partition transactions-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
+2025-03-11 23:21:20.701 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] task [0_1] Initialized
+2025-03-11 23:21:20.702 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] task [0_0] Initialized
+2025-03-11 23:21:20.702 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] task [0_2] Initialized
+2025-03-11 23:21:20.706 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Found no committed offset for partition transactions-1
+2025-03-11 23:21:20.709 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] task [0_1] Restored and ready to run
+2025-03-11 23:21:20.711 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Found no committed offset for partition transactions-0
+2025-03-11 23:21:20.711 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] task [0_0] Restored and ready to run
+2025-03-11 23:21:20.713 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Found no committed offset for partition transactions-2
+2025-03-11 23:21:20.713 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamTask - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] task [0_2] Restored and ready to run
+2025-03-11 23:21:20.714 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] Restoration took 100 ms for all tasks [0_2, 0_1, 0_0]
+2025-03-11 23:21:20.714 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] State transition from PARTITIONS_ASSIGNED to RUNNING
+2025-03-11 23:21:20.715 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.apache.kafka.streams.KafkaStreams - stream-client [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9] State transition from REBALANCING to RUNNING
+2025-03-11 23:21:20.715 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.clients.consumer.KafkaConsumer - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Requesting the log end offset for transactions-0 in order to compute lag
+2025-03-11 23:21:20.716 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.clients.consumer.KafkaConsumer - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Requesting the log end offset for transactions-1 in order to compute lag
+2025-03-11 23:21:20.716 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.clients.consumer.KafkaConsumer - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Requesting the log end offset for transactions-2 in order to compute lag
+2025-03-11 23:21:20.738 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Processing transaction: TX7182edeb
+2025-03-11 23:21:20.861 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Transaction passed: TX7182edeb
+2025-03-11 23:21:20.878 [kafka-producer-network-thread | transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] Resetting the last seen epoch of partition verified-transactions-0 to 0 since the associated topicId changed from null to MPYIfs0qQAamvQXEJoyXLQ
+2025-03-11 23:21:20.878 [kafka-producer-network-thread | transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] Resetting the last seen epoch of partition verified-transactions-2 to 0 since the associated topicId changed from null to MPYIfs0qQAamvQXEJoyXLQ
+2025-03-11 23:21:20.878 [kafka-producer-network-thread | transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] Resetting the last seen epoch of partition verified-transactions-1 to 0 since the associated topicId changed from null to MPYIfs0qQAamvQXEJoyXLQ
+2025-03-11 23:21:20.883 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Processing transaction: TX3a0966d3
+2025-03-11 23:21:20.908 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Transaction passed: TX3a0966d3
+2025-03-11 23:21:20.909 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Processing transaction: TX4edd0687
+2025-03-11 23:21:20.925 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Transaction passed: TX4edd0687
+2025-03-11 23:21:20.926 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Processing transaction: TX324fd6bd
+2025-03-11 23:21:20.942 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Transaction passed: TX324fd6bd
+2025-03-11 23:21:20.943 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Processing transaction: TX17d61153
+2025-03-11 23:21:20.959 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] WARN  c.e.TransactionBlacklistProcessor - Transaction blacklisted: TX17d61153, Reason: Counterparty: Sanctioned entity
+2025-03-11 23:21:20.963 [kafka-producer-network-thread | transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] Resetting the last seen epoch of partition blacklisted-transactions-0 to 0 since the associated topicId changed from null to efIFRmS2Qxq4fs8lXH4Zzw
+2025-03-11 23:21:20.964 [kafka-producer-network-thread | transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] Resetting the last seen epoch of partition blacklisted-transactions-1 to 0 since the associated topicId changed from null to efIFRmS2Qxq4fs8lXH4Zzw
+2025-03-11 23:21:20.964 [kafka-producer-network-thread | transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-producer] Resetting the last seen epoch of partition blacklisted-transactions-2 to 0 since the associated topicId changed from null to efIFRmS2Qxq4fs8lXH4Zzw
+2025-03-11 23:21:20.965 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Processing transaction: TX024342f1
+2025-03-11 23:21:20.981 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Transaction passed: TX024342f1
+2025-03-11 23:21:20.982 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Processing transaction: TXd5785f10
+2025-03-11 23:21:20.998 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Transaction passed: TXd5785f10
+2025-03-11 23:21:20.998 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Processing transaction: TXb3cd1d55
+2025-03-11 23:21:21.014 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Transaction passed: TXb3cd1d55
+2025-03-11 23:21:21.014 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Processing transaction: TX3419da33
+2025-03-11 23:21:21.030 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] WARN  c.e.TransactionBlacklistProcessor - Transaction blacklisted: TX3419da33, Reason: Counterparty: Sanctioned entity
+2025-03-11 23:21:21.031 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  c.e.TransactionBlacklistProcessor - Processing transaction: TXa531d639
+2025-03-11 23:21:21.048 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] WARN  c.e.TransactionBlacklistProcessor - Transaction blacklisted: TXa531d639, Reason: Account: Suspicious activity detected
+2025-03-11 23:23:17.629 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] Processed 10 total records, ran 0 punctuators, and committed 3 total tasks since the last update
+2025-03-11 23:41:19.605 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Disconnecting from node 1 due to request timeout.
+2025-03-11 23:41:19.660 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Cancelled in-flight FETCH request with correlation id 328 due to node 1 being disconnected (elapsed time since creation: 1063854ms, elapsed time since send: 1063854ms, request timeout: 30000ms)
+2025-03-11 23:41:19.676 [kafka-coordinator-heartbeat-thread | transaction-blacklist-processor] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+2025-03-11 23:41:19.690 [kafka-coordinator-heartbeat-thread | transaction-blacklist-processor] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2025-03-11 23:41:19.671 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Error sending fetch request (sessionId=1608268078, epoch=267) to node 1:
+org.apache.kafka.common.errors.DisconnectException: null
+2025-03-11 23:41:19.691 [kafka-coordinator-heartbeat-thread | transaction-blacklist-processor] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Client requested disconnect from node 2147483646
+2025-03-11 23:41:19.714 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] Processed 0 total records, ran 0 punctuators, and committed 0 total tasks since the last update
+2025-03-11 23:41:19.937 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2025-03-11 23:41:20.439 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2025-03-11 23:41:30.787 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m13s380ms).
+2025-03-11 23:57:18.452 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Disconnecting from node 1 due to request timeout.
+2025-03-11 23:57:18.580 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Cancelled in-flight FETCH request with correlation id 394 due to node 1 being disconnected (elapsed time since creation: 933211ms, elapsed time since send: 933211ms, request timeout: 30000ms)
+2025-03-11 23:57:18.581 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.clients.FetchSessionHandler - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Error sending fetch request (sessionId=1492767497, epoch=50) to node 1:
+org.apache.kafka.common.errors.DisconnectException: null
+2025-03-11 23:57:18.582 [kafka-coordinator-heartbeat-thread | transaction-blacklist-processor] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
+2025-03-11 23:57:18.582 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.s.p.internals.StreamThread - stream-thread [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] Processed 0 total records, ran 0 punctuators, and committed 0 total tasks since the last update
+2025-03-11 23:57:18.607 [kafka-coordinator-heartbeat-thread | transaction-blacklist-processor] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2025-03-11 23:57:18.623 [kafka-coordinator-heartbeat-thread | transaction-blacklist-processor] INFO  o.apache.kafka.clients.NetworkClient - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Client requested disconnect from node 2147483646
+2025-03-11 23:57:18.631 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2025-03-11 23:57:18.632 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: coordinator unavailable. isDisconnected: false. Rediscovery will be attempted.
+2025-03-11 23:57:18.632 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
+2025-03-11 23:57:18.714 [transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1] INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=transaction-blacklist-processor-e6637b43-eae8-42c5-b484-f1938275e2f9-StreamThread-1-consumer, groupId=transaction-blacklist-processor] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
