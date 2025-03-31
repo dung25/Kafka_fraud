@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -173,6 +175,53 @@ public class OracleBlacklistRepository implements AutoCloseable {
         }
 
         return results;
+    }
+
+    /**
+     * Inserts a blacklisted customer record into the BLACKLISTED_CUSTOMER_LOG table
+     *
+     * @param customerId The customer ID
+     * @param customerName The customer name
+     * @param taxId The tax ID (can be null)
+     * @param nationality The nationality (can be null)
+     * @param reason The reason for blacklisting
+     * @return true if insertion was successful, false otherwise
+     */
+    public boolean insertBlacklistedCustomer(String customerId, String customerName, String taxId,
+                                             String nationality, String reason) {
+        String sql = "INSERT INTO BLACKLISTED_CUSTOMER_LOG " +
+                "(CUSTOMER_ID, CUSTOMER_NAME, TAX_ID, NATIONALITY, BLACKLIST_REASON, DETECTION_TIME) " +
+                "VALUES (?, ?, ?, ?, ?, ?)";
+
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, customerId);
+            stmt.setString(2, customerName);
+
+            // Handle nullable fields
+            if (taxId != null && !taxId.isEmpty()) {
+                stmt.setString(3, taxId);
+            } else {
+                stmt.setNull(3, java.sql.Types.VARCHAR);
+            }
+
+            if (nationality != null && !nationality.isEmpty()) {
+                stmt.setString(4, nationality);
+            } else {
+                stmt.setNull(4, java.sql.Types.VARCHAR);
+            }
+
+            stmt.setString(5, reason);
+            stmt.setTimestamp(6, Timestamp.from(Instant.now()));
+
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0;
+
+        } catch (SQLException e) {
+            logger.error("Error inserting blacklisted customer into database: {}", e.getMessage(), e);
+            return false;
+        }
     }
 
     @Override

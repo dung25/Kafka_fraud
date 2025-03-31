@@ -118,10 +118,31 @@ public class CustomerBlacklistProcessor {
                             record.getShortName(), record.getRecId()))
                     .to(outputTopic, Produced.with(Serdes.String(), customerSerde));
 
-            // Send blacklisted records to the blacklisted topic
+            // Send blacklisted records to the blacklisted topic AND insert into Oracle DB
             branches[1]
-                    .peek((key, record) -> logger.warn("Customer blacklisted: {} ({}), Reason: {}",
-                            record.getShortName(), record.getRecId(), record.getBlacklistReason()))
+                    .peek((key, record) -> {
+                        logger.warn("Customer blacklisted: {} ({}), Reason: {}",
+                                record.getShortName(), record.getRecId(), record.getBlacklistReason());
+
+                        // Insert blacklisted record into Oracle database
+                        try {
+                            boolean inserted = blacklistRepo.insertBlacklistedCustomer(
+                                    record.getRecId(),
+                                    record.getShortName(),
+                                    record.getTaxId(),
+                                    record.getNationality(),
+                                    record.getBlacklistReason()
+                            );
+
+                            if (inserted) {
+                                logger.info("Successfully inserted blacklisted customer into Oracle DB: {}", record.getRecId());
+                            } else {
+                                logger.error("Failed to insert blacklisted customer into Oracle DB: {}", record.getRecId());
+                            }
+                        } catch (Exception e) {
+                            logger.error("Error inserting blacklisted customer into Oracle DB: {}", e.getMessage(), e);
+                        }
+                    })
                     .to(blacklistedTopic, Produced.with(Serdes.String(), customerSerde));
 
             // Create and start the Kafka Streams instance
